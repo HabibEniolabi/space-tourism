@@ -27,7 +27,7 @@ const App = () => {
 
       <StripeOverlay />
 
-      <div className="relative z-10">
+      <div className="relative  h-full overflow-hidden">
         <Header />
 
         <Routes>

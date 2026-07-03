@@ -22,11 +22,13 @@ const Destination = () => {
             />
           </div>
 
-          <DestinationDetails
-            destinations={destinations}
-            activeDestination={activeDestination}
-            onSelectDestination={setActiveDestination}
-          />
+          <div className="relative z-30">
+            <DestinationDetails
+              destinations={destinations}
+              activeDestination={activeDestination}
+              onSelectDestination={setActiveDestination}
+            />
+          </div>
         </div>
       </div>
     </section>

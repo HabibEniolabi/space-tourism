@@ -35,7 +35,7 @@ const Navbar = ({ isOpen, onClose }: NavbarProps) => {
           onClick={onClose}
           className={({ isActive }) =>
             [
-              "relative flex h-full items-center gap-3 font-barlow-condensed text-[13px] uppercase tracking-[2.6px] text-white",
+              "relative flex h-full items-center gap-2 font-barlow-condensed text-[13px] uppercase tracking-[2.6px] text-white",
               "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-transparent hover:after:bg-white/50",
               "max-md:h-auto max-md:w-full max-md:text-base max-md:after:hidden",
               isActive ? "after:bg-white max-md:border-r-4 max-md:border-white" : "",
