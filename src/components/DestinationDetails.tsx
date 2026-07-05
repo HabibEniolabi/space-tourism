@@ -24,7 +24,7 @@ const DestinationDetails = ({
               onClick={() => onSelectDestination(destination)}
               className={[
                 "relative pb-3 font-barlow-condensed text-[13px] uppercase tracking-[2.2px] text-[#d0d6f9] transition hover:text-white",
-                "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-transparent",
+                "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-transparent cursor-pointer",
                 isActive
                   ? "text-white after:bg-white"
                   : "hover:after:bg-white/50",
