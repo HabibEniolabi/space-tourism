@@ -1,11 +1,13 @@
 import rawData from "../../data.json";
 
+interface ImagePair {
+  png: string;
+  webp: string;
+}
+
 interface DestinationJson {
   name: string;
-  images: {
-    png: string;
-    webp: string;
-  };
+  images: ImagePair;
   description: string;
   distance: string;
   travel: string;
@@ -13,10 +15,7 @@ interface DestinationJson {
 
 interface CrewJson {
   name: string;
-  images: {
-    png: string;
-    webp: string;
-  };
+  images: ImagePair;
   role: string;
   bio: string;
 }
@@ -44,15 +43,24 @@ const assetUrls = import.meta.glob("../assets/images/**/*.{png,webp,jpg,jpeg}", 
   import: "default",
 }) as Record<string, string>;
 
+const createId = (value: string) => value.toLowerCase().replace(/\s+/g, "-");
+
 const resolveAsset = (path: string) => {
   const normalizedPath = path.replace("./assets", "../assets");
-  return assetUrls[normalizedPath];
+  const asset = assetUrls[normalizedPath];
+
+  if (!asset) {
+    throw new Error(`Asset not found: ${normalizedPath}`);
+  }
+
+  return asset;
 };
 
 export interface Destination {
   id: string;
   name: string;
-  image: string;
+  pngImage: string;
+  webpImage: string;
   description: string;
   distance: string;
   travelTime: string;
@@ -61,7 +69,8 @@ export interface Destination {
 export interface CrewMember {
   id: string;
   name: string;
-  image: string;
+  pngImage: string;
+  webpImage: string;
   role: string;
   bio: string;
 }
@@ -74,25 +83,21 @@ export interface Technology {
   description: string;
 }
 
-const createId = (value: string) => {
-  return value.toLowerCase().replace(/\s+/g, "-");
-};
-
-export const destinations: Destination[] = data.destinations.map(
-  (destination) => ({
-    id: createId(destination.name),
-    name: destination.name,
-    image: resolveAsset(destination.images.webp),
-    description: destination.description,
-    distance: destination.distance.toUpperCase(),
-    travelTime: destination.travel.toUpperCase(),
-  })
-);
+export const destinations: Destination[] = data.destinations.map((destination) => ({
+  id: createId(destination.name),
+  name: destination.name,
+  pngImage: resolveAsset(destination.images.png),
+  webpImage: resolveAsset(destination.images.webp),
+  description: destination.description,
+  distance: destination.distance.toUpperCase(),
+  travelTime: destination.travel.toUpperCase(),
+}));
 
 export const crewMembers: CrewMember[] = data.crew.map((member) => ({
   id: createId(member.name),
   name: member.name,
-  image: resolveAsset(member.images.webp),
+  pngImage: resolveAsset(member.images.png),
+  webpImage: resolveAsset(member.images.webp),
   role: member.role,
   bio: member.bio,
 }));

@@ -16,18 +16,22 @@ const App = () => {
     pageBackgrounds["/"];
 
   return (
-    <main className="relative h-[100dvh] overflow-hidden bg-[#0b0f1d] text-white">
-      <ResponsiveBackground
-        desktop={currentBackground.desktop}
-        tablet={currentBackground.tablet}
-        mobile={currentBackground.mobile}
-      />
+    <main className="relative min-h-[100dvh] overflow-x-hidden bg-[#0b0f1d] text-white">
+      {/* Fixed background layers */}
+      <div className="fixed inset-0 z-0">
+        <ResponsiveBackground
+          desktop={currentBackground.desktop}
+          tablet={currentBackground.tablet}
+          mobile={currentBackground.mobile}
+        />
 
-      <div className="absolute inset-0 z-[1] bg-[#050814]/25" />
+        <div className="absolute inset-0 bg-[#050814]/25" />
 
-      <StripeOverlay />
+        <StripeOverlay />
+      </div>
 
-      <div className="relative  h-full overflow-hidden">
+      {/* Scrollable page content */}
+      <div className="relative z-10 min-h-[100dvh]">
         <Header />
 
         <Routes>

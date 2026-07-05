@@ -55,7 +55,7 @@ const Destination = () => {
         <div className="mt-12 flex flex-1 flex-col items-center justify-center gap-8 md:mt-14 md:gap-10 lg:mt-16 lg:flex-row lg:items-center lg:justify-center lg:gap-20 xl:gap-24">
           <div className="flex w-full justify-center lg:w-1/2 lg:justify-start">
             <img
-              src={activeDestination.image}
+              src={activeDestination.pngImage}
               alt={activeDestination.name}
               className="w-[150px] object-contain md:w-[250px] lg:w-[360px] xl:w-[390px]"
             />
