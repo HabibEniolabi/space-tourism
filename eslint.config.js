@@ -23,7 +23,7 @@ export default defineConfig([
       "@typescript-eslint/no-empty-object-type": "off",
 
       // This allows you to use interface freely
-      "@typescript-eslint/consistent-type-definitions": ["off"],
+      "@typescript-eslint/consistent-type-definitions": "off",
     },
   },
 ])

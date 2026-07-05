@@ -19,25 +19,26 @@ const Crew = () => {
   }, []);
 
   return (
-    <section className="relative h-[calc(100dvh-96px)] overflow-hidden px-6 pt-4 text-white md:h-[calc(100dvh-96px)] md:px-10 md:pt-7 lg:h-[calc(100dvh-128px)] lg:px-[clamp(4rem,8vw,120px)] lg:pt-4">
+    <section className="relative h-[calc(100dvh-96px)] overflow-hidden px-6 py-5 text-white md:h-[calc(100dvh-96px)] md:px-10 md:py-7 lg:h-[calc(100dvh-128px)] lg:px-[clamp(4rem,8vw,120px)] lg:py-4">
       <div className="mx-auto flex h-full w-full max-w-[1000px] flex-col">
         <h2 className="relative z-30 font-barlow-condensed text-base uppercase tracking-[2.7px] text-white md:text-xl md:tracking-[3.38px] lg:text-[24px] lg:tracking-[4px]">
           <span className="mr-4 font-bold text-white/25">02</span>
           Meet your crew
         </h2>
 
-        <div className="relative flex flex-1 flex-col items-center justify-center gap-6 md:pt-8 lg:flex-row lg:items-end lg:justify-between lg:gap-10 lg:pt-0">
-          <div className="relative z-30 flex w-full max-w-[440px] flex-col items-center justify-center text-center lg:items-start lg:text-left">
+        <div className="flex flex-1 flex-col items-center justify-center gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+          {/* Left content */}
+          <div className="relative z-30 flex w-full max-w-[430px] flex-col items-center text-center lg:h-[430px] lg:items-start lg:justify-center lg:text-left xl:h-[460px]">
             <div>
-              <p className="mb-2 font-bellefair text-base uppercase text-white/50 md:text-xl lg:mb-3 lg:text-[24px]">
+              <p className="mb-2 font-bellefair text-base uppercase text-white/50 md:text-xl lg:text-[24px]">
                 {activeCrew.role}
               </p>
 
-              <h1 className="mb-4 font-bellefair text-[28px] uppercase leading-none text-white md:text-[36px] lg:mb-5 lg:text-[44px] xl:text-[40px]">
+              <h1 className="mb-4 font-bellefair text-[28px] uppercase leading-none text-white md:text-[38px] lg:text-[44px] xl:text-[48px]">
                 {activeCrew.name}
               </h1>
 
-              <p className="mx-auto max-w-[420px] font-barlow text-[15px] leading-[1.65] text-[#d0d6f9] md:text-base md:leading-7 lg:mx-0 lg:max-w-[390px]">
+              <p className="mx-auto max-w-[400px] font-barlow text-[15px] leading-[1.65] text-[#d0d6f9] md:text-base md:leading-7 lg:mx-0 lg:max-w-[390px]">
                 {activeCrew.bio}
               </p>
             </div>
@@ -62,12 +63,13 @@ const Crew = () => {
             </div>
           </div>
 
-          <div className="relative z-10 flex w-full flex-1 items-end justify-center lg:justify-end">
+          {/* Right image */}
+          <div className="relative z-10 flex w-full max-w-[430px] items-end justify-center lg:h-[430px] lg:max-w-[430px] xl:h-[460px] xl:max-w-[460px]">
             <img
               key={activeCrew.id}
               src={activeCrew.image}
               alt={activeCrew.name}
-              className="max-h-[210px] w-auto object-contain md:max-h-[340px] lg:max-h-[440px] xl:max-h-[480px]"
+              className="max-h-[220px] w-auto object-contain object-bottom md:max-h-[330px] lg:max-h-[430px] xl:max-h-[460px]"
             />
           </div>
         </div>
