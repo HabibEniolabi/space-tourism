@@ -22,7 +22,7 @@ const Home = () => {
         </div>
 
         <div className="flex shrink-0 justify-center lg:pr-[clamp(0rem,4vw,70px)]">
-          <button className="h-[140px] w-[140px] rounded-full bg-white font-bellefair text-lg uppercase tracking-[2px] text-[#11131f] transition duration-300 hover:scale-[1.02] hover:shadow-[0_0_0_52px_rgba(255,255,255,0.12)] md:h-[220px] md:w-[220px] md:text-[30px] md:hover:shadow-[0_0_0_72px_rgba(255,255,255,0.12)] lg:h-[240px] lg:w-[240px] xl:h-[250px] xl:w-[250px] xl:text-[32px]">
+          <button type="button" className="h-[140px] w-[140px] rounded-full bg-white font-bellefair text-lg uppercase tracking-[2px] text-[#11131f] transition duration-300 hover:scale-[1.02] hover:shadow-[0_0_0_52px_rgba(255,255,255,0.12)] md:h-[220px] md:w-[220px] md:text-[30px] md:hover:shadow-[0_0_0_72px_rgba(255,255,255,0.12)] lg:h-[240px] lg:w-[240px] xl:h-[250px] xl:w-[250px] xl:text-[32px]">
             Explore
           </button>
         </div>
