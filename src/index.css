@@ -4,17 +4,45 @@
   --font-barlow: "Barlow", sans-serif;
   --font-barlow-condensed: "Barlow Condensed", sans-serif;
   --font-bellefair: "Bellefair", serif;
+
+  --color-space-dark: #0b0f1d;
 }
 
-html,
-body,
-#root {
+html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
+  min-height: 100%;
   margin: 0;
-  background: #0b0f1d;
-  font-family: "Barlow", sans-serif;
+  overflow-x: hidden;
+  background: var(--color-space-dark);
+  font-family: var(--font-barlow);
+}
+
+/* React root wrapper without using #root */
+body > div {
+  min-height: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
