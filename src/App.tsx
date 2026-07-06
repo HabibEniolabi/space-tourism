@@ -16,9 +16,9 @@ const App = () => {
     pageBackgrounds["/"];
 
   return (
-    <main className="relative min-h-[100dvh] overflow-x-hidden bg-[#0b0f1d] text-white">
-      {/* Fixed background layers */}
-      <div className="fixed inset-0 z-0">
+    <main className="relative isolate min-h-[100svh] overflow-x-hidden bg-[#0b0f1d] text-white">
+      {/* Background only */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
         <ResponsiveBackground
           desktop={currentBackground.desktop}
           tablet={currentBackground.tablet}
@@ -26,12 +26,15 @@ const App = () => {
         />
 
         <div className="absolute inset-0 bg-[#050814]/25" />
+      </div>
 
+      {/* Stripes should sit above images but below text */}
+      <div className="pointer-events-none fixed inset-0 z-20">
         <StripeOverlay />
       </div>
 
-      {/* Scrollable page content */}
-      <div className="relative z-10 min-h-[100dvh]">
+      {/* Do not give this z-10/z-30, or it will create stacking issues */}
+      <div className="min-h-[100svh] overflow-x-hidden">
         <Header />
 
         <Routes>

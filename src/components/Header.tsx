@@ -26,7 +26,7 @@ const Header = () => {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
         onClick={handleToggleMenu}
-        className="fixed right-6 top-8 z-[80] hidden h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden max-md:flex"
+        className="fixed right-6 top-8 z-[80] cursor-pointer hidden h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden max-md:flex"
       >
         <span
           className={[
